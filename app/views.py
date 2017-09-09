@@ -29,10 +29,20 @@ def admin_auth(func):
         return func(*args, **kwargs)
     return check_user
 
+def user_auth():
+    if not 'username' in session:
+        return False
+    user = models.User.query.filter_by(username = session['username']).first()
+    if not user:
+        return False
+    return True
+
 @app.route('/')
 @app.route('/index')
 def index():
-    user = models.User.query.filter_by(username = session['username']).first()
+    user = None
+    if user_auth():
+        user = models.User.query.filter_by(username = session['username']).first()
     return render_template('index.html', title = 'Welcome', user = user)
 
 @app.route('/login', methods = ['GET', 'POST'])

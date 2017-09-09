@@ -32,10 +32,13 @@ def admin_auth(func):
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html', title = 'Welcome')
+    user = models.User.query.filter_by(username = session['username']).first()
+    return render_template('index.html', title = 'Welcome', user = user)
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
+    user = models.User.query.filter_by(username = session['username']).first()
+    
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
@@ -48,10 +51,12 @@ def login():
         flash('Logged in')
         return redirect('/index')
     
-    return render_template('login.html', title = 'Login', login_form = login_form)
+    return render_template('login.html', title = 'Login', login_form = login_form, user = user)
 
 @app.route('/create', methods = ['GET', 'POST'])
 def create():
+    user = models.User.query.filter_by(username = session['username']).first()
+    
     create_form = CreateForm()
 
     if create_form.validate_on_submit():
@@ -68,7 +73,7 @@ def create():
         flash('Logged in')
         return redirect('/index')
     
-    return render_template('create.html', title = 'Create an Account', create_form = create_form)
+    return render_template('create.html', title = 'Create an Account', create_form = create_form, user = user)
 
 @app.route('/test')
 @logged_in

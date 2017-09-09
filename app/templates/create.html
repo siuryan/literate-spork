@@ -1,81 +1,43 @@
 {% extends "base.html" %}
 
+{% import "macros.html" as macros %}
+
 {% block content %}
-<h1>Create an Account</h1>
-<form action="" method="post" name="login">
-    {{ create_form.hidden_tag() }}
+<div class="container">
+  <center>
+    <h1>Create an Account</h1>
+  </center>
+  
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
 
-    <p>
-    {% if create_form.username.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="username">Username:</label><br>
-            {{ create_form.username }}<br>
-            {% if create_form.username.errors %}
-            <span class="help-block">{{ create_form.username.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
+    <form action="" method="post" name="login">
+      {{ create_form.hidden_tag() }}
+      
+      <p>
+      {{ macros.render_field(create_form.username, "Username") }}
+      </p>
+      
+      <p>
+	{{ macros.render_field(create_form.password, "Password") }}
+      </p>
+      
+      <p>
+	{{ macros.render_field(create_form.password2, "Retype password") }}
+      </p>
+      
+      <p>
+	{{ macros.render_field(create_form.nickname, "Nickname") }}
+      </p>
+      
+      <p>
+	{{ macros.render_field(create_form.email, "Email") }}
+      </p>
+      
+      <p>{{ macros.render_field(create_form.submit, "Create") }}</p>
 
-    <p>
-    {% if create_form.password.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="password">Password:</label><br>
-            {{ create_form.password }}<br>
-            {% if create_form.password.errors %}
-            <span class="help-block">{{ create_form.password.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>
-    {% if create_form.password2.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="password2">Retype password:</label><br>
-            {{ create_form.password2 }}<br>
-            {% if create_form.password2.errors %}
-            <span class="help-block">{{ create_form.password2.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>
-    {% if create_form.nickname.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="nickname">Nickname:</label><br>
-            {{ create_form.nickname }}<br>
-            {% if create_form.nickname.errors %}
-            <span class="help-block">{{ create_form.nickname.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>
-    {% if create_form.email.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="email">Email:</label><br>
-            {{ create_form.email }}<br>
-            {% if create_form.email.errors %}
-            <span class="help-block">{{ create_form.email.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>{{ create_form.submit(value="Create") }}</p>
-
-</form>
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
 {% endblock %}

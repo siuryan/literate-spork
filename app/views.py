@@ -9,7 +9,7 @@ def logged_in(func):
     def check_user(*args, **kwargs):
         if not 'username' in session:
             flash("You are not logged in")
-            return redirect(url_for('login', prev_url = request.path))
+            return redirect(url_for('login'))
         return func(*args, **kwargs)
     return check_user
 
@@ -18,7 +18,7 @@ def admin_auth(func):
     def check_user(*args, **kwargs):
         if not 'username' in session:
             flash("You are not logged in")
-            return redirect(url_for('login', prev_url = request.path))
+            return redirect(url_for('login'))
         user = models.User.query.filter_by(username = session['username']).first()
         if not user:
             flash("Authentication did not check out")

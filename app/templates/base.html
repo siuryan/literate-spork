@@ -9,6 +9,12 @@
   </head>
   <body>
     <div>Website: <a href="/index">Home</a></div>
+    {% if user %}
+    <a href="/logout">Log out</a>
+    {% else %}
+    <a href="/create">Create an Account</a>
+     <a href="/login">Login</a>
+    {% endif %}
     <hr>
     {% with messages = get_flashed_messages() %}
       {% if messages %}

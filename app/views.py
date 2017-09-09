@@ -83,7 +83,7 @@ def create():
 
 @app.route('/logout', methods = ['GET', 'POST'])
 def logout():
-    session.clear()
+    session.pop('username', None)
     flash('Logged out')
     return redirect('/index')
 

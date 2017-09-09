@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, request, session, url_for, get_flashed_messages
 from app import app, db, models
-from .forms import LoginForm
+from .forms import LoginForm, CreateForm
 
 from functools import wraps
 
@@ -49,6 +49,26 @@ def login():
         return redirect('/index')
     
     return render_template('login.html', title = 'Login', login_form = login_form)
+
+@app.route('/create', methods = ['GET', 'POST'])
+def create():
+    create_form = CreateForm()
+
+    if create_form.validate_on_submit():
+        session['username'] = create_form.username.data
+        session['admin'] = 'false'
+
+        user = models.User(username = create_form.username.data,
+                    nickname = create_form.nickname.data,
+                    email = create_form.email.data)
+        user.set_password(create_form.password.data)
+        db.session.add(user)
+        db.session.commit()                    
+
+        flash('Logged in')
+        return redirect('/index')
+    
+    return render_template('create.html', title = 'Create an Account', create_form = create_form)
 
 @app.route('/test')
 @logged_in

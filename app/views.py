@@ -81,6 +81,7 @@ def logout():
     flash('Logged out')
     return redirect('/index')
 
+
 @app.route('/test')
 @logged_in
 def test():

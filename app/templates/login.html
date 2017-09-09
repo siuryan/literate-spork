@@ -1,39 +1,29 @@
 {% extends "base.html" %}
 
+{% import "macros.html" as macros %}
+
 {% block content %}
-<h1>Log In</h1>
-<form action="" method="post" name="login">
-    {{ login_form.hidden_tag() }}
-
-    <p>
-    {% if login_form.username.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="username">Username:</label><br>
-            {{ login_form.username }}<br>
-            {% if login_form.username.errors %}
-            <span class="help-block">{{ login_form.username.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>
-    {% if login_form.password.errors %}
-    <div class="form-group has-error">
-        {% else %}
-        <div class="form-group">
-            {% endif %}
-            <label for="password">Password:</label><br>
-            {{ login_form.password }}<br>
-            {% if login_form.password.errors %}
-            <span class="help-block">{{ login_form.password.errors[0] }}</span>
-            {% endif %}
-        </div>
-    </p>
-
-    <p>{{ login_form.submit(value="Log in") }}</p>
-
-</form>
+<div class="container">
+  
+  <center><h1>Log In</h1></center>
+  
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <form action="" method="post" name="login">
+      {{ login_form.hidden_tag() }}
+      
+      <p>
+	{{ macros.render_field(login_form.username, "Username") }}
+      </p>
+    
+      <p>
+	{{ macros.render_field(login_form.password, "Password") }}
+      </p>
+      
+      <p>{{ macros.render_field(login_form.submit, "Log in") }}</p>
+      
+    </form>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
 {% endblock %}

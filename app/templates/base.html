@@ -1,42 +1,41 @@
 <html>
-  <head>
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Website</title>
-    {% endif %}
-    <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="/">Literate Spork</a>
-        </div>
-        <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="/">Home</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-            {% if user %}
-            <li><a href="/logout">Log out</a></li>
-            {% else %}
-            <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            {% endif %}
-        </ul>
-    </div>
-    </nav>
-    <hr>
-    {% with messages = get_flashed_messages() %}
-      {% if messages %}
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Website</title>
+        {% endif %}
+        <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Literate Spork</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user %}
+                    <li><a href="/logout">Log out</a></li>
+                    {% else %}
+                    <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
         <ul>
-        {% for message in messages %}
+            {% for message in messages %}
             <li>{{ message }} </li>
-        {% endfor %}
+            {% endfor %}
         </ul>
-      {% endif %}
-    {% endwith %}
-    {% block content %}{% endblock %}
-  </body>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
 </html>

@@ -70,6 +70,12 @@ def create():
     
     return render_template('create.html', title = 'Create an Account', create_form = create_form)
 
+@app.route('/logout', methods = ['GET', 'POST'])
+def logout():
+    session.clear()
+    flash('Logged out')
+    return redirect('/index')
+
 @app.route('/test')
 @logged_in
 def test():

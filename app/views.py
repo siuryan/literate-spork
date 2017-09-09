@@ -74,7 +74,6 @@ def create():
         return redirect('/index')
     
     return render_template('create.html', title = 'Create an Account', create_form = create_form, user = user)
-<<<<<<< HEAD
 
 @app.route('/logout', methods = ['GET', 'POST'])
 def logout():
@@ -82,8 +81,6 @@ def logout():
     flash('Logged out')
     return redirect('/index')
 
-=======
->>>>>>> 77afecdd88c717f26e5ec3c9d02eea98aec8088a
 
 @app.route('/test')
 @logged_in

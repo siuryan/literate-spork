@@ -87,7 +87,6 @@ def logout():
     flash('Logged out')
     return redirect('/index')
 
-
 @app.route('/classes')
 @logged_in
 def classes():
@@ -96,3 +95,9 @@ def classes():
     school_classes = models.SchoolClass.query.all()
     
     return render_template("classes.html", user = user, school_classes = school_classes)
+
+@app.route('/ad')
+@logged_in
+def ad():
+    ad_form = ADForm()
+    ad_form.classname.choices = 

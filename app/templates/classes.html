@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <table>
+    <tr>
+      <td>Class</td>
+      <td>Period</td>
+      <td>Teacher</td>
+      <td>Adds</td>
+      <td>Drops</td>
+      <td>Net Difference</td>
+    </tr>
+    {% for class in school_classes %}
+    <tr>
+      <td>{{ class.name }}</td>
+      <td>{{ class.period }}</td>
+      <td>{{ class.teacher }}</td>
+      <td>{{ class.adds|length }}</td>
+      <td>{{ class.drops|length }}</td>
+      <td>{{ class.adds|length - class.drops|length }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+</div>
+
+{% endblock %}

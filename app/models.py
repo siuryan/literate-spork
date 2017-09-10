@@ -38,6 +38,8 @@ class Drop(db.Model):
 class SchoolClass(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
+    name = db.Column(db.String, index=True, unique=False)
+
     adds = db.relationship('Add', backref='school_class', lazy='dynamic')
     drops = db.relationship('Drop', backref='school_class', lazy='dynamic')
 

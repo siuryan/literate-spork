@@ -88,7 +88,11 @@ def logout():
     return redirect('/index')
 
 
-@app.route('/test')
+@app.route('/classes')
 @logged_in
-def test():
-    return "test"
+def classes():
+    user = models.User.query.filter_by(username = session['username']).first()
+
+    school_classes = models.SchoolClass.query.all()
+    
+    return render_template("classes.html", user = user, school_classes = school_classes)

@@ -12,17 +12,18 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Literate Spork</a>
+                    <a class="navbar-brand" href="{{ url_for('index') }}">Literate Spork</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
+                  <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+		  <li><a href="{{ url_for('classes') }}">Classses</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user %}
-                    <li><a href="/logout">Log out</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log out</a></li>
                     {% else %}
-                    <li><a href="/create"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    <li><a href="{{ url_for('create') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="{{ url_for('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     {% endif %}
                 </ul>
             </div>

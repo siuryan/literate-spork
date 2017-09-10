@@ -44,7 +44,5 @@ class SchoolClass(db.Model):
     drops = db.relationship('Drop', backref='school_class', lazy='dynamic')
 
     period = db.Column(db.Integer, index=True, unique=False)
-    teacher = db.Column(db.Integer, index=True, unique=False)
+    teacher = db.Column(db.String(120), index=True, unique=False)
 
-
-    

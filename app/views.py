@@ -1,6 +1,6 @@
 from flask import render_template, flash, redirect, request, session, url_for, get_flashed_messages
 from app import app, db, models
-from .forms import LoginForm, CreateForm
+from .forms import LoginForm, CreateForm, ADForm
 
 from functools import wraps
 
@@ -96,8 +96,23 @@ def classes():
     
     return render_template("classes.html", user = user, school_classes = school_classes)
 
-@app.route('/ad')
+@app.route('/form', methods=['GET', 'POST'])
 @logged_in
-def ad():
+def form():
+    user = models.User.query.filter_by(username = session['username']).first()
+    
     ad_form = ADForm()
-    ad_form.classname.choices = 
+
+    if ad_form.validate_on_submit():
+        print ad_form.classname.data
+        print ad_form.choice.data
+        return redirect('/form')
+
+    classes = models.SchoolClass.query.all()
+    select_choices = []
+    for c in classes:
+        string = c.name + ', Period ' + str(c.period) + ', ' + c.teacher
+        select_choices.append((string, string))   
+    ad_form.classname.choices = select_choices
+
+    return render_template('ad_form.html', user = user, ad_form = ad_form)

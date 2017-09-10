@@ -1,5 +1,6 @@
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy.ext.hybrid import hybrid_property
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -43,6 +44,12 @@ class SchoolClass(db.Model):
     adds = db.relationship('Add', backref='school_class', lazy='dynamic')
     drops = db.relationship('Drop', backref='school_class', lazy='dynamic')
 
+    num_adds = db.Column(db.Integer, index=True, unique=False)
+    num_drops = db.Column(db.Integer, index=True, unique=False)
+
     period = db.Column(db.Integer, index=True, unique=False)
     teacher = db.Column(db.String(120), index=True, unique=False)
 
+    @hybrid_property
+    def change(self):
+        return self.num_adds - self.num_drops

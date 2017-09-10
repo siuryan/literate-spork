@@ -3,30 +3,44 @@
 {% block content %}
 
 <div class="container">
+  <center><h1>Class List</h1></center>
+  <div class="row text-center">
+    <div class="btn-group">
+      <a class="btn btn-primary {% if sort == 1 %}active{% endif %}" href="{{ url_for('classes', sort = 1) }}" role="button">Period</a>
+      <a class="btn btn-primary {% if sort == 2 %}active{% endif %}" href="{{ url_for('classes', sort = 2) }}" role="button">Class</a>
+      <a class="btn btn-primary {% if sort == 3 %}active{% endif %}" href="{{ url_for('classes', sort = 3) }}" role="button">Teacher</a>
+      <a class="btn btn-primary {% if sort == 4 %}active{% endif %}" href="{{ url_for('classes', sort = 4) }}" role="button">Adds</a>
+      <a class="btn btn-primary {% if sort == 5 %}active{% endif %}" href="{{ url_for('classes', sort = 5) }}" role="button">Drops</a>
+      <a class="btn btn-primary {% if sort == 6 %}active{% endif %}" href="{{ url_for('classes', sort = 6) }}" role="button">Change</a>
+    </div>
+  </div>
+  <br>
+  <div class="row">
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
-        <table class="table table-bordered">
-            <thead>
-                <th>Class</th>
-                <th>Period</th>
-                <th>Teacher</th>
-                <th>Adds</th>
-                <th>Drops</th>
-                <th>Change</th>
-            </thead>
-            {% for class in school_classes %}
-            <tr>
-                <td>{{ class.name }}</td>
-                <td>{{ class.period }}</td>
-                <td>{{ class.teacher }}</td>
-                <td>{{ class.adds.all()|length }}</td>
-                <td>{{ class.drops.all()|length }}</td>
-                <td>{{ class.adds.all()|length - class.drops.all()|length }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+      <table class="table table-bordered">
+        <thead>
+          <th>Class</th>
+          <th>Period</th>
+          <th>Teacher</th>
+          <th>Adds</th>
+          <th>Drops</th>
+          <th>Change</th>
+        </thead>
+        {% for class in school_classes %}
+        <tr>
+          <td>{{ class.name }}</td>
+          <td>{{ class.period }}</td>
+          <td>{{ class.teacher }}</td>
+          <td>{{ class.adds.all()|length }}</td>
+          <td>{{ class.drops.all()|length }}</td>
+          <td>{{ class.adds.all()|length - class.drops.all()|length }}</td>
+        </tr>
+        {% endfor %}
+      </table>
     </div>
     <div class="col-sm-2"></div>
+  </div>
 </div>
 
-{% endblock %}
+  {% endblock %}

@@ -1,6 +1,7 @@
 from flask import render_template, flash, redirect, request, session, url_for, get_flashed_messages
 from app import app, db, models
 from .forms import LoginForm, CreateForm, ADForm
+from sqlalchemy import desc
 
 from functools import wraps
 
@@ -88,13 +89,29 @@ def logout():
     return redirect('/index')
 
 @app.route('/classes')
+@app.route('/classes/<int:sort>')
 @logged_in
-def classes():
+def classes(sort = 1):
     user = models.User.query.filter_by(username = session['username']).first()
 
-    school_classes = models.SchoolClass.query.all()
+    school_classes = models.SchoolClass.query
+
+    if sort == 1:
+        school_classes = school_classes.order_by(models.SchoolClass.period)
+    elif sort == 2:
+        school_classes = school_classes.order_by(models.SchoolClass.name)
+    elif sort == 3:
+        school_classes = school_classes.order_by(models.SchoolClass.teacher)
+    elif sort == 4:
+        school_classes = school_classes.order_by(models.SchoolClass.num_adds.desc())
+    elif sort == 5:
+        school_classes = school_classes.order_by(models.SchoolClass.num_drops.desc())
+    elif sort == 6:
+        school_classes = school_classes.order_by(models.SchoolClass.change.desc())
     
-    return render_template("classes.html", user = user, school_classes = school_classes)
+    school_classes = school_classes.all()
+    
+    return render_template("classes.html", user = user, school_classes = school_classes, sort = sort)
 
 @app.route('/form', methods=['GET', 'POST'])
 @logged_in
@@ -114,9 +131,11 @@ def form():
         school_class = models.SchoolClass.query.filter_by(id = int(ad_form.classname.data)).first()
         if ad_form.choice.data == 'add':
             c = models.Add(user = user, school_class = school_class)
+            school_class.num_adds += 1
             flash('Class added')
         else:
             c = models.Drop(user = user, school_class = school_class)
+            school_class.num_drops += 1
             flash('Class dropped')
         db.session.add(c)
         db.session.commit()

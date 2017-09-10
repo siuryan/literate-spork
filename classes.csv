@@ -1,21 +1,30 @@
 Advanced Chem Lab,1,Pluchino
+AP Biology (Periods 1 and 2),1,Fong
 AP Calc AB,1,Jaye
 AP CS,1,Brown
 AP Gov (Integrated),1,Siegel
 AP Music Theory,1,Tamosaitis
-AP Physics C,1,Thomas
+AP Physics C (Periods 1 and 2 on A days),1,Thomas
+Bio Lab Techniques,1,Quenzer
 British Lit,1,Kincaid
-Indoor Cycling,1,Markova
+Criminal Law,1,Weissman
+Indoor Cycling (A),1,Markova
+Indoor Cycling (B),1,Markova
+Jazz Band,1,Winkel
 Spanish 4,1,Flores
-Rollerblading,1,Choubaralian
+Rollerblading (A),1,Choubaralian
+Rollerblading (B),1,Choubaralian
 Woodworking,1,Bernstein
+Advanced Web Design,1,Dillon
 Advanced Chem Lab,2,Pluchino
 AP Calc AB,2,Jaye
 AP Calc BC,2,Kats
+AP Chem (Periods 2 and 3),2,Paik
 AP CS,2,Brown
-AP Environmenta,2,McClellan
+AP Environmental,2,McClellan
 AP Gov (Integrated),2,Brando
-Ballroom,2,Choy
+Ballroom (A),2,Choy
+Ballroom (B),2,Choy
 British Lit,2,Mandler
 Ceramics,2,Lonardo
 Criminal Law,2,Weissman
@@ -25,9 +34,11 @@ Engineering Design,2,Suter
 Forensics,2,Horenstein
 Mulltivariable,2,Stern
 Organic Chemistry,2,O'Malley
-Polar Bear,2,Bologna
+Polar Bear (A),2,Bologna
+Polar Bear (B),2,Bologna
 Spanish Films,2,Montserrat
-Swimming,2,Luczak
+Swimming (A),2,Luczak
+Swimming (B),2,Luczak
 Topics in Chem,2,Daves
 Women's Voices,2,Ferencz
 AP Bio Psych,3,Reep
@@ -36,6 +47,8 @@ AP English Psychology,3,Mandler
 British Lit,3,Gern
 AP Gov,3,Polazzo
 AP Gov (Integrated),3,Siegel
+AP Macro,3,McRoy-Mendell
+AP Physics 1 (Periods 3 and 4),3,Avallone
 Painting,3,Barrow
 Nutritional Science,3,Hill
 Economics,3,Boericke
@@ -44,12 +57,15 @@ AP Spanish,3,Ambia
 Precalculus,3,Chew
 Modern Physics,3,Majewski
 Woodworking,3,Bernstein
-Rollerblading,3,Choubaralian
-Part in Govt,3,Shuman
+Rollerblading (A),3,Choubaralian
+Rollerblading (B),3,Choubaralian
+Part in Gov,3,Shuman
 Human Diseases,3,Hill
+AP Biology (Periods 4 and 5),4,Ned
+AP Chemistry (Periods 4 and 5),4,O'Malley
 AP Calc AB,4,Ku
 AP Calc BC,4,Cocoros
-AP Literature,4,Grossman
+AP Great Books,4,Grossman
 AP Mando,4,Guan
 AP Stat,4,Feigenbaum
 Band,4,Wheeler
@@ -57,11 +73,13 @@ British Lit,4,Mott
 Calc Apps,4,Maksudian
 Ceramics,4,Lonardo
 Existentialism,4,Mazzurco
-Indoor Cycling,4,Markova
+Indoor Cycling (A),4,Markova
+Indoor Cycling (B),4,Markova
 Interior Design,4,Rothenberg
 Nutritional Science,4,Hill
 Part in Gov,4,Weissman
-Phys Ed,4,Wong
+Regular PE (A),4,Wong
+Regular PE (B),4,Wong
 Systems,4,Dyrland-Weaver
 AP Society and Self,5,Henderson
 AP Calc AB,5,Ku
@@ -70,7 +88,6 @@ AP Macro,5,Schweitzer
 AP Mando,5,Guan
 AP Spanish,5,Monserrat
 AP Stat,5,Feigenbaum
-AP Chem,5,O'Malley
 AP CS,5,Holmes
 British Lit,5,Kim
 British Lit,5,Mott
@@ -80,7 +97,127 @@ Human Pathophysiology,5,Citron
 Oceanography,5,McClellan
 Oratorio Chorus,5,Shamazov
 Photography,5,Winston
-Great Books,5,Fletcher
+AP Great Books,5,Fletcher
 Part in Gov,5,Weissman
-Regular PE,5,Wong
+Regular PE (A),5,Wong
+Regular PE (B),5,Wong
 Systems,5,Dyrland-Weaver
+AP Macro,6,Schweitzer
+AP Biology (Periods 6 and 7),6,Reep
+AP Calc AB,6,Chew
+AP Calc BC,6,Kats
+AP Gov (Integrated),6,Greez
+AP Spanish,6,Montserrat
+Ballroom (A),6,Choy
+Ballroom (B),6,Choy
+British Lit,6,Kim
+Calc Apps,6,Hiller
+Economics,6,McRoy-Mendell
+Human Pathophysiology,6,Citron
+Jewelry Design,6,Suter
+Math Explorations,6,Rubinstein
+Modern China,6,Boericke
+Neurobiology,6,Tu
+Part in Gov,6,Badgley
+Regular PE (A),6,Luczak
+Regular PE (A),6,Rosenthal
+Regular PE (B),6,Luczak
+Regular PE (B),6,Rosenthal
+Photography,6,Winston
+Shakespearean Lit,6,Hannon
+Volleyball,6,Wong
+Western Political Theory,6,Polazzo
+Women's Voices,6,Ferencz
+Anthropology,7,Hua
+Advanced Chem Lab,7,Paik
+Advanced Strings,7,Tamosaitis
+AP Calc AB,7,Chew
+AP Calc BC,7,Cocoros
+AP Chemistry (Periods 7 and 8),7,Arora
+AP CS,7,Holmes
+AP Gov (Integrated),7,Greez
+Acting,7,Sheinman
+Architecture,7,Rothenberg
+Ballroom (A),7,Choy
+Ballroom (B),7,Choy
+British Lit,7,Thoms
+British Lit,7,Gern
+British Lit,7,Kincaid
+Calc Apps,7,Jaishankar
+Concert Chorus,7,Stephan
+Economics,7,McRoy-Mendell
+Forensics,7,Horenstein
+Human Diseases,7,Citron
+Math Explorations,7,Rubinstein
+Part in Gov,7,Weissman
+Photography,7,Winston
+Softdev,7,Brown
+Writer's Workshop,7,Francis
+Advanced Chem Lab,8,Paik
+AP Calc AB,8,Ku
+AP Mando,8,Guan
+AP Gov,8,Trainor
+AP Physics C (Periods 8 and 9 on A days),8,Sharaf
+AP Stat,8,Feigenbaum
+Acting,8,Sheinman
+Anthropology,8,Hua
+Astronomy,8,Akhmedov
+British Lit,8,Thoms
+British Lit,8,Mandler
+Calc Apps,8,Jaishankar
+Mulltivariable,8,Avigdor
+Painting,8,Karp
+Regular PE (A),8,Wong
+Regular PE (B),8,Wong
+Softdev,8,Dyrland-Weaver
+Advanced Web Design,8,Dillon
+Western Political Theory,8,Polazzo
+Writer's Workshop,8,Francis
+3D Arts and Technology,9,Bernstein
+AP Biology (Periods 9 and 10),9,Reep
+AP Bio Psych,9,Chan
+AP Stat,9,Feigenbaum
+AP Macro,9,Schweitzer
+AP Mando,9,Guan
+AP Social Psych,9,McRoy-Mendell
+AP Society and Self,9,Henderson
+AP Gov,9,Brando
+Bio Lab Techniques,9,Quenzer
+British Lit,9,Kincaid
+British Lit,9,Gern
+Calc Apps,9,Jaishankar
+Complex Calc,9,Stern
+Economics,9,Boericke
+Jewish History,9,Sandler
+Madrigal Choir,9,Shamazov
+Neurobiology,9,Tu
+Organic Chemistry,9,O'Malley
+Part in Gov,9,Badgley
+Regular PE (A),9,Miller
+Regular PE (B),9,Miller
+Robotic Engineering,9,Blay
+Softdev,9,Dyrland-Weaver
+Shakespearean Lit,9,Hannon
+Volleyball (A),9,Wong
+Volleyball (B),9,Wong
+Advanced Web Design,9,Dillon
+3D Arts and Technology,10,Bernstein
+Advanced Journalism,10,Garfinkel
+AP CS,10,Konstantinovich
+AP Macro,10,Schweitzer
+AP Gov (Integrated),10,Brando
+AP Social Psych,10,McRoy-Mendell
+AP Environmental,10,Citron
+Bio Regeneron,10,Econome
+British Lit,10,Kim
+British Lit,10,Kincaid
+Economics,10,Boericke
+Graphic Arts,10,Winston
+Human Reasoning,10,Brooks
+Jewish History,10,Sandler
+Latin IV,10,Brockman
+Math Team,10,Kats
+Math Regeneron,10,Rubinstein
+Part in Gov,10,Trainor
+Science Olympiad,10,Akhmedov
+Systems,10,Dyrland-Weaver

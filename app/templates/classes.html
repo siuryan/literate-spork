@@ -2,31 +2,29 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-        <table class="table table-bordered">
-            <thead>
-                <th>Class</th>
-                <th>Period</th>
-                <th>Teacher</th>
-                <th>Adds</th>
-                <th>Drops</th>
-                <th>Change</th>
-            </thead>
-            {% for class in school_classes %}
-            <tr>
-                <td>{{ class.name }}</td>
-                <td>{{ class.period }}</td>
-                <td>{{ class.teacher }}</td>
-                <td>{{ class.adds.all()|length }}</td>
-                <td>{{ class.drops.all()|length }}</td>
-                <td>{{ class.adds.all()|length - class.drops.all()|length }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </div>
-    <div class="col-sm-2"></div>
+<div class="col-sm-2"></div>
+<div class="col-sm-8">
+    <table class="table table-bordered">
+        <thead>
+            <th>Class</th>
+            <th>Period</th>
+            <th>Teacher</th>
+            <th>Adds</th>
+            <th>Drops</th>
+            <th>Change</th>
+        </thead>
+        {% for class in school_classes %}
+        <tr>
+            <td>{{ class.name }}</td>
+            <td>{{ class.period }}</td>
+            <td>{{ class.teacher }}</td>
+            <td>{{ class.adds.all()|length }}</td>
+            <td>{{ class.drops.all()|length }}</td>
+            <td>{{ class.adds.all()|length - class.drops.all()|length }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
+<div class="col-sm-2"></div>
 
 {% endblock %}

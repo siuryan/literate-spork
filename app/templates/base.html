@@ -6,6 +6,8 @@
         {% else %}
         <title>Website</title>
         {% endif %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="{{bootstrap_find_resource('css/bootstrap.css', cdn='bootstrap')}}" rel="stylesheet">
     </head>
     <body>
@@ -15,11 +17,11 @@
                     <a class="navbar-brand" href="{{ url_for('index') }}">Literate Spork</a>
                 </div>
                 <ul class="nav navbar-nav">
-                  <li><a href="{{ url_for('index') }}">Home</a></li>
-		  {% if user %}
-		  <li><a href="{{ url_for('classes') }}">Classs List</a></li>
-		  <li><a href="{{ url_for('form') }}">Edit Classes</a></li>
-		  {% endif %}
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    {% if user %}
+                    <li><a href="{{ url_for('classes') }}">Class List</a></li>
+                    <li><a href="{{ url_for('form') }}">Edit Classes</a></li>
+                    {% endif %}
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user %}
@@ -31,15 +33,20 @@
                 </ul>
             </div>
         </nav>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }} </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul class="alert">
+                {% for message in messages %}
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+        </div>
         {% block content %}{% endblock %}
     </body>
 </html>

@@ -103,16 +103,23 @@ def form():
     
     ad_form = ADForm()
 
-    if ad_form.validate_on_submit():
-        print ad_form.classname.data
-        print ad_form.choice.data
-        return redirect('/form')
-
     classes = models.SchoolClass.query.all()
     select_choices = []
     for c in classes:
         string = c.name + ', Period ' + str(c.period) + ', ' + c.teacher
-        select_choices.append((string, string))   
+        select_choices.append((str(c.id), string))   
     ad_form.classname.choices = select_choices
+
+    if ad_form.validate_on_submit():
+        school_class = models.SchoolClass.query.filter_by(id = int(ad_form.classname.data)).first()
+        if ad_form.choice.data == 'add':
+            c = models.Add(user = user, school_class = school_class)
+            flash('Class added')
+        else:
+            c = models.Drop(user = user, school_class = school_class)
+            flash('Class dropped')
+        db.session.add(c)
+        db.session.commit()
+        return redirect('/form')
 
     return render_template('ad_form.html', user = user, ad_form = ad_form)

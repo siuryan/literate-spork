@@ -45,7 +45,7 @@ class CreateForm(Form):
         return True
 
 class ADForm(Form):
-    choice = RadioField('choice', choices=[('add','Add'), ('drop','Drop')])
+    choice = RadioField('choice', choices=[('add','Add'), ('drop','Drop')], default='add')
     classname = SelectField('classname')
     submit = SubmitField()
 
